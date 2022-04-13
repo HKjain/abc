@@ -25,13 +25,14 @@ int main()
 	for(int i=0; i<n; i++)
 	{
 		int frameNumber = frames[i];
-		cout << "Sending Frame on sender side: " << frameNumber << endl;
-		cout << "Received the frame on receiver side: " << frameNumber << endl;
-		
-		cout << "Acknowledgment sent from receiver for frame " << frameNumber << endl;
+		cout << "Sending Frame : " << frameNumber;
+		cout<<"                             ";
+		cout << "Received  frame : " << frameNumber << endl;
+		cout<<endl;
+		//cout << "Acknowledgment sent from receiver for frame " << frameNumber << endl<<endl;
 		int waitTime = random(1, timeout+2);
-		cout << waitTime << endl;
-		//sleep(waitTime);
+		//cout << waitTime << endl;
+		sleep(waitTime);
 		
 		if(waitTime<=timeout)
 		{
