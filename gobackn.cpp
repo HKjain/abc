@@ -41,17 +41,24 @@ int main()
      sleep(wait);
      for(int j=i;j<i+N && j<=nf;j++)
      {
-         int flag = rand()%2;
-         if(!flag)
-             {
-                 cout<<"Acknowledgment for Frame "<<j<<endl;
-                 x++;
-             }
-         else
-             {   cout<<"Frame "<<j<<" Not Received"<<endl;
-                 cout<<"Retransmitting Window"<<endl;
-                 break;
-             }
+	int rnum = random(1,30);
+	int flag = rnum%2;
+	if(!flag)
+	{
+		cout<<"Acknowledgment for Frame "<<j<< " received!" << endl;
+		x++;
+	}
+	else
+	{   
+		if(rnum<=10)
+		cout<<"Frame "<<j<<" Damaged!"<<endl;
+		else if(rnum<=20)
+		cout<<"Frame "<<j<<" Not Received"<<endl;
+		else if(rnum<=30)
+		cout<<"Frame "<<j<<" Acknowledgement not Received"<<endl;
+		cout<<"Retransmitting Window..."<<endl;
+		break;
+	}
      }
      cout<<endl;
      i+=x;
